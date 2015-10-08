@@ -49,3 +49,14 @@ ul li {
   box-shadow:0 2px 0 0 #662929;
   border-radius:4px;
 }
+#clear_todo{
+  margin-left:125px;
+  background:#FF6666;
+  color:#662929;
+  font-size:16px;
+  border:none;
+  padding:8px 20px;
+  letter-spacing:2px;
+  box-shadow:0 2px 0 0 #662929;
+  border-radius:4px;
+}

@@ -33,7 +33,7 @@ app.post("/todos", function (req,res){
   var date = new Date();
   db.Todo.create({
     date: date,
-    task: req.body.input
+    task: req.body.input //grab the form data from the DOM
   });
   db.Todo.find({}, function (err,todos){ 
     res.format({
@@ -49,16 +49,16 @@ app.post("/todos", function (req,res){
 });
 
 //EDIT
-app.get("/users/:id/edit", function (req,res){
+app.get("/todos/:id/edit", function (req,res){
 });
 
 //UPDATE
-app.put("/users/:id", function (req,res){
+app.put("/todos/:id", function (req,res){
 });
 
 //DESTROY
-app.delete("/users/:id", function (req,res){
-  // db.findAndDelete
+app.delete("/todos/:id", function (req,res){
+  db.findByIdAndDelete
 });
 
 //CATCH ALL
