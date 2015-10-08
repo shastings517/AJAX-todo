@@ -35,7 +35,7 @@ app.post("/todos", function (req,res){
     date: date,
     task: req.body.input //grab the form data from the DOM
   });
-  db.Todo.find({}, function (err,todos){ 
+  db.Todo.find({}, function (err, todos){ 
     res.format({
       'application/json': function(){
         res.send({todos:todos});  //sending back 11am forecast
@@ -56,9 +56,17 @@ app.get("/todos/:id/edit", function (req,res){
 app.put("/todos/:id", function (req,res){
 });
 
+//DESTROY ALL
+app.delete("/clear", function (req, res){
+  db.Todo.remove({}, function (err, todos){
+    if(err){
+      console.log(err);
+    }
+  });
+});
+
 //DESTROY
 app.delete("/todos/:id", function (req,res){
-  db.findByIdAndDelete
 });
 
 //CATCH ALL

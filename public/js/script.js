@@ -28,5 +28,14 @@ $(document).ready(function(){
     }
   });
 
-  // $('delete').on('click')
+  $('#clear_todo').on('click', function(e){
+    e.preventDefault();
+    $('ul').empty();
+    $.ajax({
+      url:"/clear",
+      dataType: "json",
+      method: "DELETE"
+    }).done(function(serverResponse){
+    });
+  });
 });
