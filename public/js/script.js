@@ -19,7 +19,7 @@ $(document).ready(function(){
         $('input').val("");//CLEARS INPUT BAR
         $('ul').empty();//CLEARS ALL OLD INPUTS AND UPDATES PAGE WITH ALL OLD INPUTS + NEW INPUT
         array.forEach(function(el){
-          $('ul').append("<li>" + el.task + "</li>");
+          $('ul').append("<li>" + el.task + "<button id=" + this.id + " type='submit' class='deleteBtn'>Delete</button></li>");
         });
       });
     }
@@ -27,7 +27,7 @@ $(document).ready(function(){
       console.log('no input');
     }
   });
-
+  //CLEAR ALL LOGIC
   $('#clear_todo').on('click', function(e){
     e.preventDefault();
     $('ul').empty();
@@ -38,4 +38,19 @@ $(document).ready(function(){
     }).done(function(serverResponse){
     });
   });
+  //CLEAR SPECIFIC ENTRY
+  $('ul').on('click', function(){
+    console.log(this, "you clicked");
+    
+
+  });
+
+
+
+
+
+
+
+
+
 });

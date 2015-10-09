@@ -67,6 +67,7 @@ app.delete("/clear", function (req, res){
 
 //DESTROY
 app.delete("/todos/:id", function (req,res){
+  // db.Todo.findByIdAndRemove(req.)
 });
 
 //CATCH ALL
